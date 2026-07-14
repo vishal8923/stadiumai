@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Accessibility, Eye, MapPin, Navigation, Layers } from 'lucide-react';
+import { ArrowLeft, Accessibility, Eye, Navigation } from 'lucide-react';
 import { useAppStore } from '@/store/appStore';
 import { useCrowdPolling } from '@/hooks/useCrowdPolling';
 import { getDensityColor } from '@/utils/formatters';
@@ -42,7 +42,12 @@ export const MapScreen = () => {
     const ry = 120;
 
     return (
-      <svg viewBox="0 0 400 400" className="w-full h-full">
+      <svg
+        viewBox="0 0 400 400"
+        preserveAspectRatio="xMidYMid meet"
+        style={{ width: '100%', height: '100%', display: 'block' }}
+        aria-label="Stadium Map"
+      >
         {/* Stadium outline */}
         <ellipse cx={cx} cy={cy} rx={rx + 20} ry={ry + 20} fill="#070F1A" stroke="#1A2A40" strokeWidth="2" />
         <ellipse cx={cx} cy={cy} rx={rx} ry={ry} fill="#0A1628" stroke="#4A5D75" strokeWidth="1" />
@@ -137,37 +142,55 @@ export const MapScreen = () => {
           <animate attributeName="fill-opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" />
         </circle>
         <circle cx={cx} cy={cy + 40} r="3" fill="#00B4D8" />
+
+        {/* Field */}
+        <ellipse cx={cx} cy={cy} rx={rx - 90} ry={ry - 55} fill="#0D3B1A" stroke="#1A5C28" strokeWidth="1" opacity="0.8" />
+        <text x={cx} y={cy} fill="#1A5C28" fontSize="10" textAnchor="middle" dominantBaseline="middle" fontWeight="bold" opacity="0.5">
+          FIELD
+        </text>
       </svg>
     );
   };
 
   return (
-    <div className="h-full flex flex-col relative" style={{ background: '#0A1628' }}>
+    <div className="h-full flex flex-col" style={{ background: '#0A1628' }}>
       {/* Header */}
-      <div className="flex items-center gap-3 px-4 py-3 z-10">
+      <div className="flex items-center gap-3 px-4 py-3 shrink-0">
         <button
           onClick={goBack}
-          className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer"
+          className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer shrink-0"
           style={{ background: '#111D2E', boxShadow: '4px 4px 8px #050A10, -4px -4px 8px #1A2A40' }}
         >
           <ArrowLeft size={20} color="#F0F4F8" />
         </button>
-        <h1 className="text-h1 text-stadium-text font-semibold">Stadium Map</h1>
+        <h1 className="text-lg text-white font-semibold">Stadium Map</h1>
       </div>
 
-      {/* Map */}
-      <div className="flex-1 px-4 pb-4">
+      {/* Map Container — flex-1 + min-h-0 ensures it never grows beyond available space */}
+      <div className="flex-1 min-h-0 px-4">
         <div
-          className="w-full h-full rounded-neo-card overflow-hidden p-4"
+          className="w-full h-full rounded-2xl overflow-hidden p-3"
           style={{ background: '#111D2E', boxShadow: '8px 8px 16px #050A10, -8px -8px 16px #1A2A40' }}
         >
-          {renderStadiumSVG()}
+          {/* Aspect-ratio wrapper: keeps stadium square on all sizes */}
+          <div className="w-full h-full flex items-center justify-center">
+            <div
+              style={{
+                width: '100%',
+                maxWidth: '100%',
+                aspectRatio: '1 / 1',
+                maxHeight: '100%',
+              }}
+            >
+              {renderStadiumSVG()}
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Legend */}
       {layer === 'crowd' && (
-        <div className="px-4 pb-2 flex items-center justify-center gap-3">
+        <div className="px-4 py-2 shrink-0 flex items-center justify-center gap-3">
           {[
             { color: '#00C853', label: 'Low' },
             { color: '#FFC107', label: 'Med' },
@@ -175,22 +198,39 @@ export const MapScreen = () => {
             { color: '#FF3D00', label: 'Critical' },
           ].map((item) => (
             <div key={item.label} className="flex items-center gap-1">
-              <div className="w-3 h-3 rounded-sm" style={{ background: item.color, opacity: 0.6 }} />
-              <span className="text-stadium-text-tertiary text-[10px]">{item.label}</span>
+              <div className="w-3 h-3 rounded-sm" style={{ background: item.color, opacity: 0.7 }} />
+              <span style={{ color: '#8B9DB8', fontSize: 10 }}>{item.label}</span>
             </div>
           ))}
         </div>
       )}
 
+      {/* Zone selected tooltip */}
+      {selectedZone && (
+        <div className="px-4 shrink-0">
+          <div
+            className="w-full px-4 py-2 rounded-xl flex items-center justify-between"
+            style={{ background: '#111D2E' }}
+          >
+            <span style={{ color: '#FFD700', fontSize: 13, fontWeight: 600 }}>
+              Section {selectedZone.name}
+            </span>
+            <button onClick={() => setSelectedZone(null)} style={{ color: '#8B9DB8', fontSize: 11 }}>
+              ✕ Dismiss
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Floating Controls */}
-      <div className="px-4 pb-4 space-y-3">
+      <div className="px-4 pb-4 pt-2 space-y-3 shrink-0">
         {/* Layer Toggle */}
         <div className="flex gap-2">
           {['crowd', 'amenities', 'routes'].map((l) => (
             <button
               key={l}
               onClick={() => setLayer(l)}
-              className="flex-1 py-2 rounded-neo-input text-xs font-medium capitalize cursor-pointer transition-all"
+              className="flex-1 py-2 rounded-xl text-xs font-medium capitalize cursor-pointer transition-all"
               style={{
                 background: layer === l ? '#111D2E' : '#0A1628',
                 boxShadow: layer === l
@@ -209,7 +249,7 @@ export const MapScreen = () => {
           <motion.button
             whileTap={{ scale: 0.98 }}
             onClick={() => navigateTo('navigation')}
-            className="flex-1 py-3 rounded-neo-button flex items-center justify-center gap-2 cursor-pointer"
+            className="flex-1 py-3 rounded-xl flex items-center justify-center gap-2 cursor-pointer"
             style={{ background: '#FFD700', color: '#0A1628', fontWeight: 600, fontSize: 14 }}
           >
             <Navigation size={18} />
@@ -218,22 +258,24 @@ export const MapScreen = () => {
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={() => setWheelchairMode(!wheelchairMode)}
-            className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer"
+            className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer shrink-0"
             style={{
               background: wheelchairMode ? '#00B4D8' : '#111D2E',
               boxShadow: '4px 4px 8px #050A10, -4px -4px 8px #1A2A40',
             }}
+            title="Toggle wheelchair routes"
           >
             <Accessibility size={20} color={wheelchairMode ? '#FFFFFF' : '#8B9DB8'} />
           </motion.button>
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={() => setCrowdAvoid(!crowdAvoid)}
-            className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer"
+            className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer shrink-0"
             style={{
               background: crowdAvoid ? '#00C853' : '#111D2E',
               boxShadow: '4px 4px 8px #050A10, -4px -4px 8px #1A2A40',
             }}
+            title="Avoid crowded areas"
           >
             <Eye size={20} color={crowdAvoid ? '#FFFFFF' : '#8B9DB8'} />
           </motion.button>
