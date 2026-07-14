@@ -17,11 +17,12 @@ export const BottomNav = () => {
 
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around px-2 safe-area-bottom"
+      className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around px-2 safe-area-bottom lg:hidden"
       style={{
         height: 80,
-        background: '#0A1628',
-        borderTop: '1px solid #1A2A40',
+        background: 'rgba(255, 255, 255, 0.92)',
+        backdropFilter: 'blur(16px)',
+        borderTop: '1px solid rgba(26, 36, 47, 0.08)',
       }}
     >
       {NAV_ITEMS.map((item) => {
@@ -38,11 +39,11 @@ export const BottomNav = () => {
               style={{
                 width: 56,
                 height: 56,
-                background: '#FFD700',
-                boxShadow: '0 0 20px rgba(255, 215, 0, 0.4), 4px 4px 8px #050A10, -4px -4px 8px #1A2A40',
+                background: '#DAA520',
+                boxShadow: '0 0 20px rgba(218, 165, 32, 0.4), 4px 4px 8px rgba(0, 0, 0, 0.06)',
               }}
             >
-              <Mic size={24} color="#0A1628" />
+              <Mic size={24} color="#FFFFFF" />
             </motion.button>
           );
         }
@@ -57,14 +58,14 @@ export const BottomNav = () => {
           >
             <Icon
               size={22}
-              color={isActive ? '#FFD700' : '#4A5D75'}
+              color={isActive ? '#DAA520' : '#8B9DB8'}
               strokeWidth={isActive ? 2.5 : 1.5}
             />
             {isActive && (
               <motion.div
                 layoutId="navIndicator"
-                className="w-1 h-1 rounded-full"
-                style={{ background: '#FFD700' }}
+                className="w-1.5 h-1.5 rounded-full"
+                style={{ background: '#DAA520' }}
               />
             )}
           </motion.button>

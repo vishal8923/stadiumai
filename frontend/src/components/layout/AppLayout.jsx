@@ -3,6 +3,7 @@ import { useAppStore } from '@/store/appStore';
 import { useNetworkStatus } from '@/hooks/useNetworkStatus';
 import { useAccessibility } from '@/hooks/useAccessibility';
 import { BottomNav } from '@/components/sections/BottomNav';
+import { Sidebar } from '@/components/sections/Sidebar';
 import { OfflineBanner } from '@/components/ui/OfflineBanner';
 import { syncPendingActions } from '@/utils/syncEngine';
 import { getPendingActions } from '@/utils/offlineDB';
@@ -49,23 +50,33 @@ export const AppLayout = ({ children }) => {
   const showBanner = currentScreen !== 'splash' && currentScreen !== 'onboarding';
 
   return (
-    <div className="h-full w-full relative">
-      {/* Offline Banner — hidden on splash/onboarding */}
-      {showBanner && (
-        <OfflineBanner
-          isOnline={isOnline}
-          isSyncing={isSyncing}
-          pendingCount={pendingActionsCount}
-        />
+    <div className="h-full w-full relative flex flex-row overflow-hidden bg-[#F8F5EF]">
+      {/* Sidebar - desktop only */}
+      {showNav && (
+        <div className="hidden lg:block w-72 shrink-0 h-full">
+          <Sidebar />
+        </div>
       )}
 
-      {/* Main Content */}
-      <div className={`h-full w-full ${showBanner && !isOnline ? 'pt-12' : ''}`}>
-        {children}
-      </div>
+      {/* Main Content Container */}
+      <div className="flex-1 flex flex-col h-full overflow-hidden relative">
+        {/* Offline Banner — hidden on splash/onboarding */}
+        {showBanner && (
+          <OfflineBanner
+            isOnline={isOnline}
+            isSyncing={isSyncing}
+            pendingCount={pendingActionsCount}
+          />
+        )}
 
-      {/* Bottom Navigation */}
-      {showNav && <BottomNav />}
+        {/* Screen Content */}
+        <div className={`flex-1 overflow-hidden relative ${showBanner && !isOnline ? 'pt-12' : ''} ${showNav ? 'pb-20 lg:pb-0' : ''}`}>
+          {children}
+        </div>
+
+        {/* Bottom Navigation - mobile only */}
+        {showNav && <BottomNav />}
+      </div>
     </div>
   );
 };
