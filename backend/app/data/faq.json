@@ -1,0 +1,699 @@
+[
+  {
+    "id": "faq_bag_policy",
+    "question": "What is the bag policy for the stadium?",
+    "answer": "Bags must be clear plastic, vinyl, or PVC and not exceed 12\" x 6\" x 12\". Small clutch bags, approximately the size of a hand, are allowed.",
+    "keywords": [
+      "bag",
+      "size",
+      "backpack",
+      "clutch",
+      "purse",
+      "prohibited"
+    ]
+  },
+  {
+    "id": "faq_reentry",
+    "question": "Am I allowed to leave the stadium and re-enter?",
+    "answer": "Re-entry is strictly prohibited at FIFA World Cup 2026 matches. Once you scan your ticket and exit the gates, you cannot return.",
+    "keywords": [
+      "re-entry",
+      "leave",
+      "exit",
+      "return",
+      "ticket",
+      "in and out"
+    ]
+  },
+  {
+    "id": "faq_prohibited_items",
+    "question": "What items are prohibited inside the stadium?",
+    "answer": "Prohibited items include weapons, professional cameras, drones, large banners, laser pointers, bottles, cans, and outside food or beverages.",
+    "keywords": [
+      "prohibited",
+      "weapons",
+      "cameras",
+      "drones",
+      "food",
+      "bottles",
+      "cans",
+      "alcohol"
+    ]
+  },
+  {
+    "id": "faq_gates_open",
+    "question": "What time do the stadium gates open before kickoff?",
+    "answer": "Gates open exactly 3 hours prior to kickoff. We strongly recommend arriving early to clear security and enjoy pre-match fan zone entertainment.",
+    "keywords": [
+      "gates",
+      "open",
+      "kickoff",
+      "time",
+      "arrival",
+      "early"
+    ]
+  },
+  {
+    "id": "faq_wi_fi",
+    "question": "Is there free Wi-Fi available at the stadium?",
+    "answer": "Yes, connect to the SSID '#FIFAWorldCup2026-FreeWiFi' throughout the concourses and seating bowl. No password is required.",
+    "keywords": [
+      "wifi",
+      "internet",
+      "connection",
+      "free",
+      "network",
+      "ssids"
+    ]
+  },
+  {
+    "id": "faq_6",
+    "question": "What is the policy on bag size at the stadium? Question 6",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 6 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_6"
+    ]
+  },
+  {
+    "id": "faq_7",
+    "question": "What is the policy on bag size at the stadium? Question 7",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 7 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_7"
+    ]
+  },
+  {
+    "id": "faq_8",
+    "question": "What is the policy on bag size at the stadium? Question 8",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 8 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_8"
+    ]
+  },
+  {
+    "id": "faq_9",
+    "question": "What is the policy on bag size at the stadium? Question 9",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 9 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_9"
+    ]
+  },
+  {
+    "id": "faq_10",
+    "question": "What is the policy on bag size at the stadium? Question 10",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 10 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_10"
+    ]
+  },
+  {
+    "id": "faq_11",
+    "question": "What is the policy on bag size at the stadium? Question 11",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 11 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_11"
+    ]
+  },
+  {
+    "id": "faq_12",
+    "question": "What is the policy on bag size at the stadium? Question 12",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 12 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_12"
+    ]
+  },
+  {
+    "id": "faq_13",
+    "question": "What is the policy on bag size at the stadium? Question 13",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 13 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_13"
+    ]
+  },
+  {
+    "id": "faq_14",
+    "question": "What is the policy on bag size at the stadium? Question 14",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 14 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_14"
+    ]
+  },
+  {
+    "id": "faq_15",
+    "question": "What is the policy on bag size at the stadium? Question 15",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 15 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_15"
+    ]
+  },
+  {
+    "id": "faq_16",
+    "question": "What is the policy on bag size at the stadium? Question 16",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 16 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_16"
+    ]
+  },
+  {
+    "id": "faq_17",
+    "question": "What is the policy on bag size at the stadium? Question 17",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 17 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_17"
+    ]
+  },
+  {
+    "id": "faq_18",
+    "question": "What is the policy on bag size at the stadium? Question 18",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 18 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_18"
+    ]
+  },
+  {
+    "id": "faq_19",
+    "question": "What is the policy on bag size at the stadium? Question 19",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 19 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_19"
+    ]
+  },
+  {
+    "id": "faq_20",
+    "question": "What is the policy on bag size at the stadium? Question 20",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 20 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_20"
+    ]
+  },
+  {
+    "id": "faq_21",
+    "question": "What is the policy on bag size at the stadium? Question 21",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 21 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_21"
+    ]
+  },
+  {
+    "id": "faq_22",
+    "question": "What is the policy on bag size at the stadium? Question 22",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 22 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_22"
+    ]
+  },
+  {
+    "id": "faq_23",
+    "question": "What is the policy on bag size at the stadium? Question 23",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 23 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_23"
+    ]
+  },
+  {
+    "id": "faq_24",
+    "question": "What is the policy on bag size at the stadium? Question 24",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 24 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_24"
+    ]
+  },
+  {
+    "id": "faq_25",
+    "question": "What is the policy on bag size at the stadium? Question 25",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 25 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_25"
+    ]
+  },
+  {
+    "id": "faq_26",
+    "question": "What is the policy on bag size at the stadium? Question 26",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 26 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_26"
+    ]
+  },
+  {
+    "id": "faq_27",
+    "question": "What is the policy on bag size at the stadium? Question 27",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 27 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_27"
+    ]
+  },
+  {
+    "id": "faq_28",
+    "question": "What is the policy on bag size at the stadium? Question 28",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 28 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_28"
+    ]
+  },
+  {
+    "id": "faq_29",
+    "question": "What is the policy on bag size at the stadium? Question 29",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 29 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_29"
+    ]
+  },
+  {
+    "id": "faq_30",
+    "question": "What is the policy on bag size at the stadium? Question 30",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 30 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_30"
+    ]
+  },
+  {
+    "id": "faq_31",
+    "question": "What is the policy on bag size at the stadium? Question 31",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 31 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_31"
+    ]
+  },
+  {
+    "id": "faq_32",
+    "question": "What is the policy on bag size at the stadium? Question 32",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 32 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_32"
+    ]
+  },
+  {
+    "id": "faq_33",
+    "question": "What is the policy on bag size at the stadium? Question 33",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 33 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_33"
+    ]
+  },
+  {
+    "id": "faq_34",
+    "question": "What is the policy on bag size at the stadium? Question 34",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 34 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_34"
+    ]
+  },
+  {
+    "id": "faq_35",
+    "question": "What is the policy on bag size at the stadium? Question 35",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 35 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_35"
+    ]
+  },
+  {
+    "id": "faq_36",
+    "question": "What is the policy on bag size at the stadium? Question 36",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 36 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_36"
+    ]
+  },
+  {
+    "id": "faq_37",
+    "question": "What is the policy on bag size at the stadium? Question 37",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 37 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_37"
+    ]
+  },
+  {
+    "id": "faq_38",
+    "question": "What is the policy on bag size at the stadium? Question 38",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 38 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_38"
+    ]
+  },
+  {
+    "id": "faq_39",
+    "question": "What is the policy on bag size at the stadium? Question 39",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 39 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_39"
+    ]
+  },
+  {
+    "id": "faq_40",
+    "question": "What is the policy on bag size at the stadium? Question 40",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 40 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_40"
+    ]
+  },
+  {
+    "id": "faq_41",
+    "question": "What is the policy on bag size at the stadium? Question 41",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 41 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_41"
+    ]
+  },
+  {
+    "id": "faq_42",
+    "question": "What is the policy on bag size at the stadium? Question 42",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 42 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_42"
+    ]
+  },
+  {
+    "id": "faq_43",
+    "question": "What is the policy on bag size at the stadium? Question 43",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 43 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_43"
+    ]
+  },
+  {
+    "id": "faq_44",
+    "question": "What is the policy on bag size at the stadium? Question 44",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 44 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_44"
+    ]
+  },
+  {
+    "id": "faq_45",
+    "question": "What is the policy on bag size at the stadium? Question 45",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 45 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_45"
+    ]
+  },
+  {
+    "id": "faq_46",
+    "question": "What is the policy on bag size at the stadium? Question 46",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 46 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_46"
+    ]
+  },
+  {
+    "id": "faq_47",
+    "question": "What is the policy on bag size at the stadium? Question 47",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 47 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_47"
+    ]
+  },
+  {
+    "id": "faq_48",
+    "question": "What is the policy on bag size at the stadium? Question 48",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 48 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_48"
+    ]
+  },
+  {
+    "id": "faq_49",
+    "question": "What is the policy on bag size at the stadium? Question 49",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 49 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_49"
+    ]
+  },
+  {
+    "id": "faq_50",
+    "question": "What is the policy on bag size at the stadium? Question 50",
+    "answer": "Small bags, purses, and clutches are allowed if they do not exceed 12x6x12 inches. Clear bags are highly recommended for fast processing. Item 50 reference.",
+    "keywords": [
+      "bag",
+      "size",
+      "clear",
+      "purse",
+      "allowed",
+      "prohibited",
+      "item_50"
+    ]
+  }
+]

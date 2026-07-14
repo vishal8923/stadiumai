@@ -1,0 +1,250 @@
+[
+  {
+    "id": "em_medical_emergency",
+    "scenario": "Medical Emergency or Injury",
+    "protocol": "Locate nearest staff member or dial the in-stadium emergency line at 911-STAD. Stay with the patient and do not block concourse flow.",
+    "assembly_point": "Nearest Medical Room (Station 1 near Gate C, Station 2 near Gate G)",
+    "keywords": [
+      "medical",
+      "injury",
+      "bleeding",
+      "hurt",
+      "heart",
+      "unconscious",
+      "ambulance",
+      "doctor",
+      "emergency"
+    ]
+  },
+  {
+    "id": "em_fire_alarm",
+    "scenario": "Fire Alarm and Evacuation",
+    "protocol": "If a fire alarm sounds, proceed calmly to the nearest exit gate (Gates A-H). Do not use elevators. Assist those with mobility challenges.",
+    "assembly_point": "External Assembly Plaza North/South",
+    "keywords": [
+      "fire",
+      "smoke",
+      "burning",
+      "evacuate",
+      "alarm",
+      "exit",
+      "stairwell"
+    ]
+  },
+  {
+    "id": "emergency_3",
+    "scenario": "Incidental Event Protocol 3",
+    "protocol": "Evacuate via nearest signed exit 3. Follow coordinator directives.",
+    "assembly_point": "Assembly Yard D",
+    "keywords": [
+      "emergency",
+      "fire",
+      "exit",
+      "protocol_3"
+    ]
+  },
+  {
+    "id": "emergency_4",
+    "scenario": "Incidental Event Protocol 4",
+    "protocol": "Evacuate via nearest signed exit 4. Follow coordinator directives.",
+    "assembly_point": "Assembly Yard A",
+    "keywords": [
+      "emergency",
+      "fire",
+      "exit",
+      "protocol_4"
+    ]
+  },
+  {
+    "id": "emergency_5",
+    "scenario": "Incidental Event Protocol 5",
+    "protocol": "Evacuate via nearest signed exit 5. Follow coordinator directives.",
+    "assembly_point": "Assembly Yard B",
+    "keywords": [
+      "emergency",
+      "fire",
+      "exit",
+      "protocol_5"
+    ]
+  },
+  {
+    "id": "emergency_6",
+    "scenario": "Incidental Event Protocol 6",
+    "protocol": "Evacuate via nearest signed exit 6. Follow coordinator directives.",
+    "assembly_point": "Assembly Yard C",
+    "keywords": [
+      "emergency",
+      "fire",
+      "exit",
+      "protocol_6"
+    ]
+  },
+  {
+    "id": "emergency_7",
+    "scenario": "Incidental Event Protocol 7",
+    "protocol": "Evacuate via nearest signed exit 7. Follow coordinator directives.",
+    "assembly_point": "Assembly Yard D",
+    "keywords": [
+      "emergency",
+      "fire",
+      "exit",
+      "protocol_7"
+    ]
+  },
+  {
+    "id": "emergency_8",
+    "scenario": "Incidental Event Protocol 8",
+    "protocol": "Evacuate via nearest signed exit 8. Follow coordinator directives.",
+    "assembly_point": "Assembly Yard A",
+    "keywords": [
+      "emergency",
+      "fire",
+      "exit",
+      "protocol_8"
+    ]
+  },
+  {
+    "id": "emergency_9",
+    "scenario": "Incidental Event Protocol 9",
+    "protocol": "Evacuate via nearest signed exit 9. Follow coordinator directives.",
+    "assembly_point": "Assembly Yard B",
+    "keywords": [
+      "emergency",
+      "fire",
+      "exit",
+      "protocol_9"
+    ]
+  },
+  {
+    "id": "emergency_10",
+    "scenario": "Incidental Event Protocol 10",
+    "protocol": "Evacuate via nearest signed exit 10. Follow coordinator directives.",
+    "assembly_point": "Assembly Yard C",
+    "keywords": [
+      "emergency",
+      "fire",
+      "exit",
+      "protocol_10"
+    ]
+  },
+  {
+    "id": "emergency_11",
+    "scenario": "Incidental Event Protocol 11",
+    "protocol": "Evacuate via nearest signed exit 11. Follow coordinator directives.",
+    "assembly_point": "Assembly Yard D",
+    "keywords": [
+      "emergency",
+      "fire",
+      "exit",
+      "protocol_11"
+    ]
+  },
+  {
+    "id": "emergency_12",
+    "scenario": "Incidental Event Protocol 12",
+    "protocol": "Evacuate via nearest signed exit 12. Follow coordinator directives.",
+    "assembly_point": "Assembly Yard A",
+    "keywords": [
+      "emergency",
+      "fire",
+      "exit",
+      "protocol_12"
+    ]
+  },
+  {
+    "id": "emergency_13",
+    "scenario": "Incidental Event Protocol 13",
+    "protocol": "Evacuate via nearest signed exit 13. Follow coordinator directives.",
+    "assembly_point": "Assembly Yard B",
+    "keywords": [
+      "emergency",
+      "fire",
+      "exit",
+      "protocol_13"
+    ]
+  },
+  {
+    "id": "emergency_14",
+    "scenario": "Incidental Event Protocol 14",
+    "protocol": "Evacuate via nearest signed exit 14. Follow coordinator directives.",
+    "assembly_point": "Assembly Yard C",
+    "keywords": [
+      "emergency",
+      "fire",
+      "exit",
+      "protocol_14"
+    ]
+  },
+  {
+    "id": "emergency_15",
+    "scenario": "Incidental Event Protocol 15",
+    "protocol": "Evacuate via nearest signed exit 15. Follow coordinator directives.",
+    "assembly_point": "Assembly Yard D",
+    "keywords": [
+      "emergency",
+      "fire",
+      "exit",
+      "protocol_15"
+    ]
+  },
+  {
+    "id": "emergency_16",
+    "scenario": "Incidental Event Protocol 16",
+    "protocol": "Evacuate via nearest signed exit 16. Follow coordinator directives.",
+    "assembly_point": "Assembly Yard A",
+    "keywords": [
+      "emergency",
+      "fire",
+      "exit",
+      "protocol_16"
+    ]
+  },
+  {
+    "id": "emergency_17",
+    "scenario": "Incidental Event Protocol 17",
+    "protocol": "Evacuate via nearest signed exit 17. Follow coordinator directives.",
+    "assembly_point": "Assembly Yard B",
+    "keywords": [
+      "emergency",
+      "fire",
+      "exit",
+      "protocol_17"
+    ]
+  },
+  {
+    "id": "emergency_18",
+    "scenario": "Incidental Event Protocol 18",
+    "protocol": "Evacuate via nearest signed exit 18. Follow coordinator directives.",
+    "assembly_point": "Assembly Yard C",
+    "keywords": [
+      "emergency",
+      "fire",
+      "exit",
+      "protocol_18"
+    ]
+  },
+  {
+    "id": "emergency_19",
+    "scenario": "Incidental Event Protocol 19",
+    "protocol": "Evacuate via nearest signed exit 19. Follow coordinator directives.",
+    "assembly_point": "Assembly Yard D",
+    "keywords": [
+      "emergency",
+      "fire",
+      "exit",
+      "protocol_19"
+    ]
+  },
+  {
+    "id": "emergency_20",
+    "scenario": "Incidental Event Protocol 20",
+    "protocol": "Evacuate via nearest signed exit 20. Follow coordinator directives.",
+    "assembly_point": "Assembly Yard A",
+    "keywords": [
+      "emergency",
+      "fire",
+      "exit",
+      "protocol_20"
+    ]
+  }
+]

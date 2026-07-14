@@ -1,0 +1,199 @@
+[
+  {
+    "id": "access_elevators",
+    "service_type": "elevator",
+    "location": "Elevators 1-6 near concourses",
+    "details": "Six high-capacity passenger elevators are available to transfer patrons between Levels 1, 2, 3, and 4. Staff are on duty to assist.",
+    "keywords": [
+      "elevator",
+      "lift",
+      "wheelchair",
+      "stairs",
+      "levels",
+      "accessible"
+    ]
+  },
+  {
+    "id": "access_restrooms",
+    "service_type": "restroom",
+    "location": "Sections 4, 12, 20, 28",
+    "details": "All washrooms contain accessible stalls with grab bars. Family/unisex companion restrooms are located next to Main restrooms.",
+    "keywords": [
+      "restroom",
+      "toilet",
+      "washroom",
+      "accessible",
+      "wheelchair",
+      "grab bar"
+    ]
+  },
+  {
+    "id": "access_3",
+    "service_type": "ramp",
+    "location": "Concourse Level 4",
+    "details": "Standard accessibility assistance unit 3. Open for public utilization.",
+    "keywords": [
+      "accessible",
+      "wheelchair",
+      "elevator",
+      "ramp",
+      "unit_3"
+    ]
+  },
+  {
+    "id": "access_4",
+    "service_type": "elevator",
+    "location": "Concourse Level 1",
+    "details": "Standard accessibility assistance unit 4. Open for public utilization.",
+    "keywords": [
+      "accessible",
+      "wheelchair",
+      "elevator",
+      "ramp",
+      "unit_4"
+    ]
+  },
+  {
+    "id": "access_5",
+    "service_type": "ramp",
+    "location": "Concourse Level 2",
+    "details": "Standard accessibility assistance unit 5. Open for public utilization.",
+    "keywords": [
+      "accessible",
+      "wheelchair",
+      "elevator",
+      "ramp",
+      "unit_5"
+    ]
+  },
+  {
+    "id": "access_6",
+    "service_type": "elevator",
+    "location": "Concourse Level 3",
+    "details": "Standard accessibility assistance unit 6. Open for public utilization.",
+    "keywords": [
+      "accessible",
+      "wheelchair",
+      "elevator",
+      "ramp",
+      "unit_6"
+    ]
+  },
+  {
+    "id": "access_7",
+    "service_type": "ramp",
+    "location": "Concourse Level 4",
+    "details": "Standard accessibility assistance unit 7. Open for public utilization.",
+    "keywords": [
+      "accessible",
+      "wheelchair",
+      "elevator",
+      "ramp",
+      "unit_7"
+    ]
+  },
+  {
+    "id": "access_8",
+    "service_type": "elevator",
+    "location": "Concourse Level 1",
+    "details": "Standard accessibility assistance unit 8. Open for public utilization.",
+    "keywords": [
+      "accessible",
+      "wheelchair",
+      "elevator",
+      "ramp",
+      "unit_8"
+    ]
+  },
+  {
+    "id": "access_9",
+    "service_type": "ramp",
+    "location": "Concourse Level 2",
+    "details": "Standard accessibility assistance unit 9. Open for public utilization.",
+    "keywords": [
+      "accessible",
+      "wheelchair",
+      "elevator",
+      "ramp",
+      "unit_9"
+    ]
+  },
+  {
+    "id": "access_10",
+    "service_type": "elevator",
+    "location": "Concourse Level 3",
+    "details": "Standard accessibility assistance unit 10. Open for public utilization.",
+    "keywords": [
+      "accessible",
+      "wheelchair",
+      "elevator",
+      "ramp",
+      "unit_10"
+    ]
+  },
+  {
+    "id": "access_11",
+    "service_type": "ramp",
+    "location": "Concourse Level 4",
+    "details": "Standard accessibility assistance unit 11. Open for public utilization.",
+    "keywords": [
+      "accessible",
+      "wheelchair",
+      "elevator",
+      "ramp",
+      "unit_11"
+    ]
+  },
+  {
+    "id": "access_12",
+    "service_type": "elevator",
+    "location": "Concourse Level 1",
+    "details": "Standard accessibility assistance unit 12. Open for public utilization.",
+    "keywords": [
+      "accessible",
+      "wheelchair",
+      "elevator",
+      "ramp",
+      "unit_12"
+    ]
+  },
+  {
+    "id": "access_13",
+    "service_type": "ramp",
+    "location": "Concourse Level 2",
+    "details": "Standard accessibility assistance unit 13. Open for public utilization.",
+    "keywords": [
+      "accessible",
+      "wheelchair",
+      "elevator",
+      "ramp",
+      "unit_13"
+    ]
+  },
+  {
+    "id": "access_14",
+    "service_type": "elevator",
+    "location": "Concourse Level 3",
+    "details": "Standard accessibility assistance unit 14. Open for public utilization.",
+    "keywords": [
+      "accessible",
+      "wheelchair",
+      "elevator",
+      "ramp",
+      "unit_14"
+    ]
+  },
+  {
+    "id": "access_15",
+    "service_type": "ramp",
+    "location": "Concourse Level 4",
+    "details": "Standard accessibility assistance unit 15. Open for public utilization.",
+    "keywords": [
+      "accessible",
+      "wheelchair",
+      "elevator",
+      "ramp",
+      "unit_15"
+    ]
+  }
+]

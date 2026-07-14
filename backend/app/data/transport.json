@@ -1,0 +1,228 @@
+[
+  {
+    "id": "trans_metro_red",
+    "mode": "Metro",
+    "route": "Red Line (Stadium Station)",
+    "destination": "Downtown / City Center",
+    "schedule_details": "Runs every 3 minutes post-match. Accessible ramps at all platforms.",
+    "keywords": [
+      "metro",
+      "train",
+      "subway",
+      "red line",
+      "downtown",
+      "city center",
+      "station"
+    ]
+  },
+  {
+    "id": "trans_shuttle_parking",
+    "mode": "Shuttle",
+    "route": "Lot B Express Shuttle",
+    "destination": "Parking Lot B / West Gate",
+    "schedule_details": "Continuous service starting 4 hours pre-match to 2 hours post-match.",
+    "keywords": [
+      "shuttle",
+      "bus",
+      "parking",
+      "lot b",
+      "express",
+      "ride"
+    ]
+  },
+  {
+    "id": "transport_3",
+    "mode": "Bus",
+    "route": "Route 103",
+    "destination": "Destination Zone 3",
+    "schedule_details": "Runs every 8 minutes during match days.",
+    "keywords": [
+      "transport",
+      "commute",
+      "shuttle",
+      "bus",
+      "metro",
+      "route_3"
+    ]
+  },
+  {
+    "id": "transport_4",
+    "mode": "Metro",
+    "route": "Route 104",
+    "destination": "Destination Zone 4",
+    "schedule_details": "Runs every 9 minutes during match days.",
+    "keywords": [
+      "transport",
+      "commute",
+      "shuttle",
+      "bus",
+      "metro",
+      "route_4"
+    ]
+  },
+  {
+    "id": "transport_5",
+    "mode": "Shuttle",
+    "route": "Route 105",
+    "destination": "Destination Zone 5",
+    "schedule_details": "Runs every 10 minutes during match days.",
+    "keywords": [
+      "transport",
+      "commute",
+      "shuttle",
+      "bus",
+      "metro",
+      "route_5"
+    ]
+  },
+  {
+    "id": "transport_6",
+    "mode": "Bus",
+    "route": "Route 106",
+    "destination": "Destination Zone 6",
+    "schedule_details": "Runs every 11 minutes during match days.",
+    "keywords": [
+      "transport",
+      "commute",
+      "shuttle",
+      "bus",
+      "metro",
+      "route_6"
+    ]
+  },
+  {
+    "id": "transport_7",
+    "mode": "Metro",
+    "route": "Route 107",
+    "destination": "Destination Zone 7",
+    "schedule_details": "Runs every 12 minutes during match days.",
+    "keywords": [
+      "transport",
+      "commute",
+      "shuttle",
+      "bus",
+      "metro",
+      "route_7"
+    ]
+  },
+  {
+    "id": "transport_8",
+    "mode": "Shuttle",
+    "route": "Route 108",
+    "destination": "Destination Zone 8",
+    "schedule_details": "Runs every 13 minutes during match days.",
+    "keywords": [
+      "transport",
+      "commute",
+      "shuttle",
+      "bus",
+      "metro",
+      "route_8"
+    ]
+  },
+  {
+    "id": "transport_9",
+    "mode": "Bus",
+    "route": "Route 109",
+    "destination": "Destination Zone 9",
+    "schedule_details": "Runs every 14 minutes during match days.",
+    "keywords": [
+      "transport",
+      "commute",
+      "shuttle",
+      "bus",
+      "metro",
+      "route_9"
+    ]
+  },
+  {
+    "id": "transport_10",
+    "mode": "Metro",
+    "route": "Route 110",
+    "destination": "Destination Zone 10",
+    "schedule_details": "Runs every 15 minutes during match days.",
+    "keywords": [
+      "transport",
+      "commute",
+      "shuttle",
+      "bus",
+      "metro",
+      "route_10"
+    ]
+  },
+  {
+    "id": "transport_11",
+    "mode": "Shuttle",
+    "route": "Route 111",
+    "destination": "Destination Zone 11",
+    "schedule_details": "Runs every 16 minutes during match days.",
+    "keywords": [
+      "transport",
+      "commute",
+      "shuttle",
+      "bus",
+      "metro",
+      "route_11"
+    ]
+  },
+  {
+    "id": "transport_12",
+    "mode": "Bus",
+    "route": "Route 112",
+    "destination": "Destination Zone 12",
+    "schedule_details": "Runs every 17 minutes during match days.",
+    "keywords": [
+      "transport",
+      "commute",
+      "shuttle",
+      "bus",
+      "metro",
+      "route_12"
+    ]
+  },
+  {
+    "id": "transport_13",
+    "mode": "Metro",
+    "route": "Route 113",
+    "destination": "Destination Zone 13",
+    "schedule_details": "Runs every 18 minutes during match days.",
+    "keywords": [
+      "transport",
+      "commute",
+      "shuttle",
+      "bus",
+      "metro",
+      "route_13"
+    ]
+  },
+  {
+    "id": "transport_14",
+    "mode": "Shuttle",
+    "route": "Route 114",
+    "destination": "Destination Zone 14",
+    "schedule_details": "Runs every 19 minutes during match days.",
+    "keywords": [
+      "transport",
+      "commute",
+      "shuttle",
+      "bus",
+      "metro",
+      "route_14"
+    ]
+  },
+  {
+    "id": "transport_15",
+    "mode": "Bus",
+    "route": "Route 115",
+    "destination": "Destination Zone 15",
+    "schedule_details": "Runs every 20 minutes during match days.",
+    "keywords": [
+      "transport",
+      "commute",
+      "shuttle",
+      "bus",
+      "metro",
+      "route_15"
+    ]
+  }
+]

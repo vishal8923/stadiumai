@@ -1,0 +1,339 @@
+[
+  {
+    "id": "policy_smoking",
+    "policy": "Smoking and Vaping Policy",
+    "description": "The stadium is a 100% smoke-free and vape-free facility. Designated smoking areas are not available inside the security perimeter.",
+    "keywords": [
+      "smoking",
+      "vaping",
+      "vape",
+      "cigar",
+      "tobacco",
+      "smoke"
+    ]
+  },
+  {
+    "id": "policy_alcohol",
+    "policy": "Alcohol Sales and Consumption Policy",
+    "description": "Alcohol (beer and wine) is sold to guests aged 21 and over with valid ID. Sales cut off at the 75th minute of the match. Limit 2 drinks per purchase.",
+    "keywords": [
+      "alcohol",
+      "beer",
+      "wine",
+      "drinking",
+      "id",
+      "age",
+      "75th minute"
+    ]
+  },
+  {
+    "id": "policy_code_of_conduct",
+    "policy": "Fan Code of Conduct",
+    "description": "Fans are expected to support their teams positively. Harassment, fighting, throwing objects, or pitch invasion will result in immediate ejection and arrest.",
+    "keywords": [
+      "conduct",
+      "harassment",
+      "fighting",
+      "pitch",
+      "arrest",
+      "ejection"
+    ]
+  },
+  {
+    "id": "policy_4",
+    "policy": "Stadium Conduct Guideline 4",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 4 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_4"
+    ]
+  },
+  {
+    "id": "policy_5",
+    "policy": "Stadium Conduct Guideline 5",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 5 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_5"
+    ]
+  },
+  {
+    "id": "policy_6",
+    "policy": "Stadium Conduct Guideline 6",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 6 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_6"
+    ]
+  },
+  {
+    "id": "policy_7",
+    "policy": "Stadium Conduct Guideline 7",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 7 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_7"
+    ]
+  },
+  {
+    "id": "policy_8",
+    "policy": "Stadium Conduct Guideline 8",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 8 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_8"
+    ]
+  },
+  {
+    "id": "policy_9",
+    "policy": "Stadium Conduct Guideline 9",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 9 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_9"
+    ]
+  },
+  {
+    "id": "policy_10",
+    "policy": "Stadium Conduct Guideline 10",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 10 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_10"
+    ]
+  },
+  {
+    "id": "policy_11",
+    "policy": "Stadium Conduct Guideline 11",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 11 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_11"
+    ]
+  },
+  {
+    "id": "policy_12",
+    "policy": "Stadium Conduct Guideline 12",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 12 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_12"
+    ]
+  },
+  {
+    "id": "policy_13",
+    "policy": "Stadium Conduct Guideline 13",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 13 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_13"
+    ]
+  },
+  {
+    "id": "policy_14",
+    "policy": "Stadium Conduct Guideline 14",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 14 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_14"
+    ]
+  },
+  {
+    "id": "policy_15",
+    "policy": "Stadium Conduct Guideline 15",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 15 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_15"
+    ]
+  },
+  {
+    "id": "policy_16",
+    "policy": "Stadium Conduct Guideline 16",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 16 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_16"
+    ]
+  },
+  {
+    "id": "policy_17",
+    "policy": "Stadium Conduct Guideline 17",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 17 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_17"
+    ]
+  },
+  {
+    "id": "policy_18",
+    "policy": "Stadium Conduct Guideline 18",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 18 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_18"
+    ]
+  },
+  {
+    "id": "policy_19",
+    "policy": "Stadium Conduct Guideline 19",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 19 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_19"
+    ]
+  },
+  {
+    "id": "policy_20",
+    "policy": "Stadium Conduct Guideline 20",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 20 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_20"
+    ]
+  },
+  {
+    "id": "policy_21",
+    "policy": "Stadium Conduct Guideline 21",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 21 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_21"
+    ]
+  },
+  {
+    "id": "policy_22",
+    "policy": "Stadium Conduct Guideline 22",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 22 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_22"
+    ]
+  },
+  {
+    "id": "policy_23",
+    "policy": "Stadium Conduct Guideline 23",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 23 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_23"
+    ]
+  },
+  {
+    "id": "policy_24",
+    "policy": "Stadium Conduct Guideline 24",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 24 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_24"
+    ]
+  },
+  {
+    "id": "policy_25",
+    "policy": "Stadium Conduct Guideline 25",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 25 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_25"
+    ]
+  },
+  {
+    "id": "policy_26",
+    "policy": "Stadium Conduct Guideline 26",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 26 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_26"
+    ]
+  },
+  {
+    "id": "policy_27",
+    "policy": "Stadium Conduct Guideline 27",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 27 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_27"
+    ]
+  },
+  {
+    "id": "policy_28",
+    "policy": "Stadium Conduct Guideline 28",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 28 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_28"
+    ]
+  },
+  {
+    "id": "policy_29",
+    "policy": "Stadium Conduct Guideline 29",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 29 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_29"
+    ]
+  },
+  {
+    "id": "policy_30",
+    "policy": "Stadium Conduct Guideline 30",
+    "description": "Guests must behave respectfully. Inappropriate language or gestures are prohibited. Compliance with policy 30 is mandatory.",
+    "keywords": [
+      "conduct",
+      "behavior",
+      "rules",
+      "policy_30"
+    ]
+  }
+]
