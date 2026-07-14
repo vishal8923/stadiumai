@@ -1,5 +1,6 @@
 import uuid
 import datetime
+from typing import Optional
 from sqlalchemy.orm import Session
 from fastapi import HTTPException, status
 from app.models.models import IncidentModel, StaffModel
