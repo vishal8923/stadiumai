@@ -4,6 +4,10 @@ export const ProgressBar = ({ progress = 0, color = '#FFD700', trackColor = '#07
   <div
     className={`w-full overflow-hidden ${className}`}
     style={{ height, background: trackColor, borderRadius: height / 2 }}
+    role="progressbar"
+    aria-valuenow={Math.round(Math.min(100, Math.max(0, progress)))}
+    aria-valuemin={0}
+    aria-valuemax={100}
   >
     <div
       className="h-full transition-all duration-500 ease-out"

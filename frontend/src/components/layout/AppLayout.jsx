@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import { useAppStore } from '@/store/appStore';
 import { useNetworkStatus } from '@/hooks/useNetworkStatus';
 import { useAccessibility } from '@/hooks/useAccessibility';
@@ -21,18 +21,17 @@ export const AppLayout = ({ children }) => {
   useNetworkStatus();
   useAccessibility();
 
-  // Update pending count
+  const checkPending = useCallback(async () => {
+    const actions = await getPendingActions();
+    setPendingActionsCount(actions.length);
+  }, [setPendingActionsCount]);
+
   useEffect(() => {
-    const checkPending = async () => {
-      const actions = await getPendingActions();
-      setPendingActionsCount(actions.length);
-    };
     checkPending();
     const timer = setInterval(checkPending, 10000);
     return () => clearInterval(timer);
-  }, []);
+  }, [checkPending]);
 
-  // Sync when back online
   useEffect(() => {
     if (isOnline && pendingActionsCount > 0) {
       setSyncing(true);
@@ -44,7 +43,7 @@ export const AppLayout = ({ children }) => {
         }
       );
     }
-  }, [isOnline]);
+  }, [isOnline, pendingActionsCount, setSyncing, setPendingActionsCount]);
 
   const showNav = NAV_SCREENS.includes(currentScreen);
   const showBanner = currentScreen !== 'splash' && currentScreen !== 'onboarding';

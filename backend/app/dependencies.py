@@ -1,43 +1,61 @@
+"""Shared FastAPI dependencies for rate limiting and database sessions."""
 import time
-from fastapi import Request, HTTPException, status, Depends
-from sqlalchemy.orm import Session
 from collections import defaultdict
-from typing import Generator
+from fastapi import Depends, Request, HTTPException, status
 from app.config import settings
-from app.models.database import get_db
+from app.models.database import get_db  # noqa: F401
 
-# In-memory rate limit store: { "client_ip:path": [timestamp1, timestamp2, ...] }
-rate_limit_store = defaultdict(list)
+# In-memory store: { "client_ip:path": [timestamp1, timestamp2, ...] }
+rate_limit_store: dict[str, list[float]] = defaultdict(list)
+
 
 def rate_limiter(limit_per_minute: int):
+    """Create an in-memory per-IP-per-route rate limiter dependency.
+
+    Uses a deque-like approach: on each request we only need to check the
+    oldest timestamp, not re-scan the entire list.  Old entries are lazily
+    pruned when the list exceeds 2x the limit.
+
+    Args:
+        limit_per_minute: Maximum number of requests allowed per minute per IP+path.
+
+    Returns:
+        A FastAPI dependency callable.
+
     """
-    A simple in-memory rate limiter dependency.
-    """
-    def dependency(request: Request):
-        # Fallback to rate limit in settings if not configured
+
+    def dependency(request: Request) -> None:
         limit = limit_per_minute or settings.RATE_LIMIT_PER_MINUTE
         client_ip = request.client.host if request.client else "unknown"
-        # We limit based on IP and route path
         key = f"{client_ip}:{request.url.path}"
-        
+
         now = time.time()
-        # Clean up timestamps older than 60 seconds
-        rate_limit_store[key] = [t for t in rate_limit_store[key] if now - t < 60]
-        
-        if len(rate_limit_store[key]) >= limit:
-            raise HTTPException(
-                status_code=status.HTTP_429_TOO_MANY_REQUESTS,
-                detail="Rate limit exceeded. Please try again later."
-            )
-        
-        rate_limit_store[key].append(now)
+        timestamps = rate_limit_store[key]
+
+        # Fast path: if under limit, just append
+        if len(timestamps) < limit:
+            timestamps.append(now)
+            return
+
+        # At capacity: check if the oldest entry has expired
+        if now - timestamps[0] >= 60:
+            # Oldest entry is outside the window — drop it and others that expired
+            cutoff = now - 60
+            # Find first non-expired index (usually 0 or 1)
+            idx = 0
+            while idx < len(timestamps) and timestamps[idx] <= cutoff:
+                idx += 1
+            rate_limit_store[key] = timestamps[idx:]
+            rate_limit_store[key].append(now)
+            return
+
+        raise HTTPException(
+            status_code=status.HTTP_429_TOO_MANY_REQUESTS,
+            detail="Rate limit exceeded. Please try again later.",
+        )
+
     return dependency
 
-# Specific rate limit dependencies based on API contract:
-# - General API: 100 requests/minute
-# - AI Chat: 20 requests/minute
-# - Navigation: 50 requests/minute
-# - Incident report: 10 requests/minute
 
 general_rate_limit = Depends(rate_limiter(100))
 chat_rate_limit = Depends(rate_limiter(20))

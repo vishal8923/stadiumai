@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { WifiOff, Wifi, Loader2 } from 'lucide-react';
 
@@ -11,9 +11,11 @@ export const OfflineBanner = ({ isOnline, isSyncing, pendingCount }) => {
     if (!isOnline) {
       // Mark that we went offline
       wasOffline.current = true;
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setShowBackOnline(false);
     } else if (isOnline && wasOffline.current && !isSyncing && pendingCount === 0) {
       // We just came back online after being offline, and syncing is done
+       
       setShowBackOnline(true);
       wasOffline.current = false;
 
@@ -38,6 +40,7 @@ export const OfflineBanner = ({ isOnline, isSyncing, pendingCount }) => {
             background: 'linear-gradient(135deg, #FF3D00 0%, #FF6B35 100%)',
             boxShadow: '0 4px 20px rgba(255, 61, 0, 0.4)',
           }}
+          role="alert"
         >
           <div className="flex items-center justify-between max-w-lg mx-auto">
             <div className="flex items-center gap-3">

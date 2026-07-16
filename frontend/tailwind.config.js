@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports, no-undef */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ['class'],

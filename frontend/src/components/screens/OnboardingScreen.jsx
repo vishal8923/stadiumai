@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mic, MapPin, Check } from 'lucide-react';
 import { useAppStore } from '@/store/appStore';
@@ -53,11 +53,16 @@ export const OnboardingScreen = () => {
       animate={{ opacity: 1 }}
     >
       {/* Step Indicator */}
-      <div className="flex items-center justify-center gap-2 mb-8">
-        {steps.map((_, i) => (
+      <div className="flex items-center justify-center gap-2 mb-8" role="group" aria-label="Onboarding steps">
+        {steps.map((label, i) => (
           <div
             key={i}
             className="rounded-full transition-all"
+            role="progressbar"
+            aria-label={`Step ${i + 1}: ${label}`}
+            aria-valuenow={step >= i ? 100 : 0}
+            aria-valuemin={0}
+            aria-valuemax={100}
             style={{
               width: step === i ? 24 : 8,
               height: 8,
@@ -138,6 +143,7 @@ export const OnboardingScreen = () => {
                   <NeoToggle
                     enabled={access[opt.id]}
                     onToggle={() => setAccess((a) => ({ ...a, [opt.id]: !a[opt.id] }))}
+                    ariaLabel={opt.label}
                   />
                 </div>
               ))}
@@ -185,6 +191,7 @@ export const OnboardingScreen = () => {
             <button
               onClick={() => setStep(3)}
               className="mt-4 text-stadium-text-secondary text-sm underline cursor-pointer"
+              aria-label="Skip ticket info step"
             >
               Skip this step
             </button>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Brain } from 'lucide-react';
 
@@ -16,6 +15,10 @@ export const AnimatedOrb = ({
     animate={{ scale: [1, 1.03, 1] }}
     transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
     onClick={onClick}
+    role={onClick ? 'button' : undefined}
+    aria-label={onClick ? 'AI Assistant - Click to chat' : undefined}
+    tabIndex={onClick ? 0 : undefined}
+    onKeyDown={onClick ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onClick(); } } : undefined}
   >
     {/* Outer ring with gradient */}
     <div

@@ -1,25 +1,24 @@
-from pydantic import BaseModel, Field
-from typing import List, Optional, Dict, Any
-from datetime import datetime
+from pydantic import BaseModel
+from typing import Any
 
 # Common Models
 class Action(BaseModel):
     type: str
-    payload: Dict[str, Any]
+    payload: dict[str, Any]
 
 class AlternativeRoute(BaseModel):
-    route: List[str]
+    route: list[str]
     estimated_time_minutes: int
     distance_meters: int
     crowd_score: str
 
 class RouteResponse(BaseModel):
-    route: List[str]
+    route: list[str]
     estimated_time_minutes: int
     distance_meters: int
     crowd_score: str
-    alternative_routes: List[AlternativeRoute]
-    accessibility_notes: Optional[str] = None
+    alternative_routes: list[AlternativeRoute]
+    accessibility_notes: str | None = None
 
 class CrowdAlert(BaseModel):
     zone_id: str
@@ -30,24 +29,26 @@ class CrowdAlert(BaseModel):
 # 1. Chat
 class ChatRequest(BaseModel):
     message: str
-    user_id: Optional[str] = None
-    language: Optional[str] = None
-    location: Optional[str] = None
-    accessibility_mode: Optional[bool] = False
+    user_id: str | None = None
+    language: str | None = None
+    location: str | None = None
+    accessibility_mode: bool | None = False
 
 class ChatResponse(BaseModel):
     response_text: str
-    actions: List[Action] = []
-    route: Optional[RouteResponse] = None
-    crowd_alert: Optional[CrowdAlert] = None
+    actions: list[Action] = []
+    route: RouteResponse | None = None
+    crowd_alert: CrowdAlert | None = None
     from_agent: bool = False
 
 # 2. Navigation
 class NavigateRequest(BaseModel):
     from_location: str
     to_location: str
-    accessibility_mode: Optional[bool] = False
-    avoid_crowds: Optional[bool] = False
+    accessibility_mode: bool | None = False
+    avoid_crowds: bool | None = False
+
+
 
 # 3. Crowd Zone
 class CrowdZoneResponse(BaseModel):
@@ -57,40 +58,40 @@ class CrowdZoneResponse(BaseModel):
     prediction_5min: str
     prediction_15min: str
     risk_level: str
-    suggested_alternative: Optional[str] = None
+    suggested_alternative: str | None = None
     trend: str
 
 class CrowdAllResponse(BaseModel):
-    zones: List[CrowdZoneResponse]
+    zones: list[CrowdZoneResponse]
     timestamp: str
 
 # 4. Translation
 class TranslateRequest(BaseModel):
     text: str
-    source_lang: Optional[str] = None
+    source_lang: str | None = None
     target_lang: str
-    context: Optional[str] = None
+    context: str | None = None
 
 class TranslateResponse(BaseModel):
     translated_text: str
-    pronunciation_guide: Optional[str] = None
-    cultural_note: Optional[str] = None
-    detected_source_lang: Optional[str] = None
+    pronunciation_guide: str | None = None
+    cultural_note: str | None = None
+    detected_source_lang: str | None = None
 
 # 5. Incidents
 class IncidentRequest(BaseModel):
     type: str
     location: str
     description: str
-    severity: Optional[str] = "medium"
-    reporter_id: Optional[str] = None
+    severity: str | None = "medium"
+    reporter_id: str | None = None
 
 class IncidentResponse(BaseModel):
     incident_id: str
     priority: str
     response_time_minutes: int
     status: str
-    assigned_staff: Optional[str] = None
+    assigned_staff: str | None = None
 
 class IncidentDetailResponse(BaseModel):
     id: str
@@ -102,7 +103,7 @@ class IncidentDetailResponse(BaseModel):
     response_time_minutes: int
     assigned_staff: str
     created_at: str
-    resolved_at: Optional[str] = None
+    resolved_at: str | None = None
 
 # 6. Transport
 class TransportOption(BaseModel):
@@ -111,10 +112,10 @@ class TransportOption(BaseModel):
     destination: str
     eta_minutes: int
     recommendation_score: float
-    details: Optional[str] = None
+    details: str | None = None
 
 class TransportResponse(BaseModel):
-    options: List[TransportOption]
+    options: list[TransportOption]
     recommendation: TransportOption
     traffic_level: str
 
@@ -122,9 +123,9 @@ class TransportResponse(BaseModel):
 class MatchEvent(BaseModel):
     minute: int
     event_type: str
-    player: Optional[str] = None
-    team: Optional[str] = None
-    detail: Optional[str] = None
+    player: str | None = None
+    team: str | None = None
+    detail: str | None = None
 
 class MatchStats(BaseModel):
     possession_a: int
@@ -143,13 +144,13 @@ class MatchResponse(BaseModel):
     status: str
     stadium: str
     kickoff_time: str
-    timeline: List[MatchEvent]
+    timeline: list[MatchEvent]
     stats: MatchStats
 
 # 8. Sustainability Waste
 class WasteRequest(BaseModel):
     item_description: str
-    location: Optional[str] = None
+    location: str | None = None
 
 class WasteResponse(BaseModel):
     item_type: str
@@ -167,7 +168,7 @@ class AccessibilityServiceItem(BaseModel):
     wait_time_minutes: int
 
 class AccessibilityResponse(BaseModel):
-    services: List[AccessibilityServiceItem]
+    services: list[AccessibilityServiceItem]
     nearest: AccessibilityServiceItem
     wait_time_minutes: int
 
@@ -180,12 +181,12 @@ class UserSessionResponse(BaseModel):
 class ConversationItem(BaseModel):
     role: str
     message: str
-    intent: Optional[str] = None
-    actions: List[Action] = []
+    intent: str | None = None
+    actions: list[Action] = []
     timestamp: str
 
 class UserHistoryResponse(BaseModel):
-    conversations: List[ConversationItem]
+    conversations: list[ConversationItem]
     total: int
 
 # 12. Notifications
@@ -197,11 +198,11 @@ class NotificationItem(BaseModel):
     timestamp: str
 
 class NotificationResponse(BaseModel):
-    notifications: List[NotificationItem]
+    notifications: list[NotificationItem]
     unread_count: int
 
 class MarkReadRequest(BaseModel):
-    notification_ids: List[str]
+    notification_ids: list[str]
 
 class MarkReadResponse(BaseModel):
     updated_count: int
@@ -220,20 +221,20 @@ class AdminDashboardResponse(BaseModel):
     ai_queries_today: int
     avg_response_time: float
     staff_online: int
-    alerts: List[AlertItem]
+    alerts: list[AlertItem]
 
 # 14. Admin Incidents
 class AdminIncidentListResponse(BaseModel):
-    incidents: List[IncidentDetailResponse]
+    incidents: list[IncidentDetailResponse]
     total: int
     page: int
     pages: int
 
 class IncidentUpdateRequest(BaseModel):
-    status: Optional[str] = None
-    assigned_staff: Optional[str] = None
-    notes: Optional[str] = None
-    priority: Optional[str] = None
+    status: str | None = None
+    assigned_staff: str | None = None
+    notes: str | None = None
+    priority: str | None = None
 
 class IncidentUpdateResponse(BaseModel):
     id: str
@@ -262,10 +263,10 @@ class ZoneBreakdown(BaseModel):
     status: str
 
 class AdminCrowdAnalyticsResponse(BaseModel):
-    trends: List[TrendPoint]
-    peak_times: List[PeakTime]
-    predictions: List[CrowdPrediction]
-    zone_breakdown: List[ZoneBreakdown]
+    trends: list[TrendPoint]
+    peak_times: list[PeakTime]
+    predictions: list[CrowdPrediction]
+    zone_breakdown: list[ZoneBreakdown]
 
 # 16. Admin Staff
 class StaffMember(BaseModel):
@@ -277,7 +278,7 @@ class StaffMember(BaseModel):
     workload: int
 
 class AdminStaffResponse(BaseModel):
-    staff: List[StaffMember]
+    staff: list[StaffMember]
     total: int
     available: int
     busy: int
@@ -285,9 +286,9 @@ class AdminStaffResponse(BaseModel):
 # 17. Admin Announcements
 class AnnouncementRequest(BaseModel):
     message: str
-    zones: Optional[List[str]] = None
+    zones: list[str] | None = None
     priority: str
-    target_roles: Optional[List[str]] = None
+    target_roles: list[str] | None = None
 
 class AnnouncementResponse(BaseModel):
     announcement_id: str
@@ -302,7 +303,7 @@ class FeatureStat(BaseModel):
 class AdminUsageResponse(BaseModel):
     api_calls: int
     active_users: int
-    popular_features: List[FeatureStat]
+    popular_features: list[FeatureStat]
     error_rate: float
     avg_latency: float
 
@@ -322,4 +323,4 @@ class AIHealthResponse(BaseModel):
     status: str
     provider: str
     last_response_time_ms: float
-    quota_remaining: Optional[int] = None
+    quota_remaining: int | None = None

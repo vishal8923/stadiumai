@@ -5,7 +5,7 @@ export const useAccessibility = () => {
   const accessibility = useAppStore((s) => s.accessibility);
 
   useEffect(() => {
-    const root = document.documentElement;
+
     if (accessibility.highContrast) {
       document.body.classList.add('high-contrast');
     } else {

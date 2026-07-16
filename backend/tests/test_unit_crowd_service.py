@@ -1,5 +1,4 @@
-"""
-test_unit_crowd_service.py
+"""test_unit_crowd_service.py
 ==========================
 Unit tests for backend/app/services/crowd_service.py.
 
@@ -64,7 +63,7 @@ def test_get_zone_density_stable_trend(db_session):
         prediction_15min="medium",
         risk_level="medium",
         trend="stable",
-        timestamp=datetime.datetime.utcnow()
+        timestamp=datetime.datetime.now(datetime.timezone.utc)
     )
     db_session.add(data)
     db_session.commit()
@@ -78,7 +77,7 @@ def test_get_zone_density_stable_trend(db_session):
 
 def test_get_zone_density_rising_trend(db_session):
     """Identifies trend as rising when density is increasing."""
-    now = datetime.datetime.utcnow()
+    now = datetime.datetime.now(datetime.timezone.utc)
     d1 = CrowdDataModel(
         zone_id="gate_a", current_density=0.4, level="medium",
         prediction_5min="medium", prediction_15min="medium",
@@ -96,7 +95,7 @@ def test_get_zone_density_rising_trend(db_session):
     res = service.get_zone_density("gate_a")
     assert res.trend == "rising"
     # rising trend adds +0.05 (5m) and +0.15 (15m)
-    assert res.prediction_5min == "high"      # 0.6 + 0.05 = 0.65 -> high or medium? (Wait, level_str: >=0.7 is high, >=0.3 is medium. 0.65 is medium)
+    assert res.prediction_5min == "medium"     # 0.6 + 0.05 = 0.65 -> medium (< 0.7 threshold)
     # Actually let's just check the result type is str
     assert isinstance(res.prediction_5min, str)
     assert isinstance(res.prediction_15min, str)
@@ -104,7 +103,7 @@ def test_get_zone_density_rising_trend(db_session):
 
 def test_get_zone_density_falling_trend(db_session):
     """Identifies trend as falling when density is decreasing."""
-    now = datetime.datetime.utcnow()
+    now = datetime.datetime.now(datetime.timezone.utc)
     d1 = CrowdDataModel(
         zone_id="gate_a", current_density=0.8, level="high",
         prediction_5min="high", prediction_15min="high",
@@ -125,7 +124,7 @@ def test_get_zone_density_falling_trend(db_session):
 
 def test_get_all_zones(db_session):
     """Should return data for all unique zones in DB."""
-    now = datetime.datetime.utcnow()
+    now = datetime.datetime.now(datetime.timezone.utc)
     d1 = CrowdDataModel(
         zone_id="gate_a", current_density=0.2, level="low",
         prediction_5min="low", prediction_15min="low",
@@ -149,7 +148,7 @@ def test_get_all_zones(db_session):
 
 def test_purge_old_data(db_session):
     """Should delete records older than 24 hours."""
-    now = datetime.datetime.utcnow()
+    now = datetime.datetime.now(datetime.timezone.utc)
     d_new = CrowdDataModel(
         zone_id="gate_a", current_density=0.2, level="low",
         prediction_5min="low", prediction_15min="low",

@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Accessibility, Toilet, Hand, Globe } from 'lucide-react';
+import { ArrowLeft, Toilet, Hand, Globe } from 'lucide-react';
 import { useAppStore } from '@/store/appStore';
 import { useAccessibility } from '@/hooks/useAccessibility';
 import { NeoToggle } from '@/components/ui/NeoToggle';
@@ -27,6 +26,7 @@ export const AccessibilityScreen = () => {
           onClick={goBack}
           className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer transition-colors"
           style={{ background: 'rgba(255, 255, 255, 0.8)', border: '1px solid rgba(26, 36, 47, 0.08)' }}
+          aria-label="Go back"
         >
           <ArrowLeft size={20} color="#1A242F" />
         </button>
@@ -49,6 +49,7 @@ export const AccessibilityScreen = () => {
               <NeoToggle
                 enabled={accessibility[opt.id]}
                 onToggle={() => toggleAccessibility(opt.id)}
+                ariaLabel={opt.label}
               />
             </motion.div>
           ))}
@@ -85,6 +86,7 @@ export const AccessibilityScreen = () => {
                 whileTap={{ scale: 0.98 }}
                 onClick={() => navigateTo(action.screen)}
                 className="w-full flex items-center gap-4 p-4 rounded-2xl cursor-pointer text-left glass-card"
+                aria-label={action.label}
               >
                 <div
                   className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-50 border border-gray-100"

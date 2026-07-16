@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Brain, Send, Mic, MicOff, Sparkles } from 'lucide-react';
 import { useAppStore } from '@/store/appStore';
@@ -21,6 +21,7 @@ const StreamingText = ({ text }) => {
 
   useEffect(() => {
     let index = 0;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setDisplayedText('');
     const timer = setInterval(() => {
       setDisplayedText((prev) => prev + text.charAt(index));
@@ -43,7 +44,7 @@ export const ChatScreen = () => {
   const setTyping = useAppStore((s) => s.setTyping);
   const userId = useAppStore((s) => s.userId);
   const language = useAppStore((s) => s.language);
-  const navigateTo = useAppStore((s) => s.navigateTo);
+
   const goBack = useAppStore((s) => s.goBack);
   const { isOnline } = useNetworkStatus();
   const { isListening, transcript, setTranscript, startListening, stopListening, speak } = useVoice();
@@ -55,6 +56,7 @@ export const ChatScreen = () => {
 
   useEffect(() => {
     if (transcript) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setInput(transcript);
     }
   }, [transcript]);
@@ -71,7 +73,7 @@ export const ChatScreen = () => {
 
   const sendMessage = async (text) => {
     if (!text.trim()) return;
-    const userMsg = { id: Date.now(), role: 'user', text: text.trim(), time: new Date().toISOString() };
+    const userMsg = { id: crypto.randomUUID(), role: 'user', text: text.trim(), time: new Date().toISOString() };
     addMessage(userMsg);
     setInput('');
     setTranscript('');
@@ -97,7 +99,7 @@ export const ChatScreen = () => {
         language,
       });
       const aiMsg = {
-        id: Date.now() + 1,
+        id: crypto.randomUUID(),
         role: 'assistant',
         text: res.data.response_text || res.data.response || 'I understand. How can I help?',
         actions: res.data.actions || [],
@@ -108,7 +110,7 @@ export const ChatScreen = () => {
     } catch {
       const mock = getMockResponse(text.trim());
       const aiMsg = {
-        id: Date.now() + 1,
+        id: crypto.randomUUID(),
         role: 'assistant',
         text: mock.response_text,
         actions: mock.actions,
@@ -151,6 +153,7 @@ export const ChatScreen = () => {
           onClick={goBack}
           className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer transition-colors duration-200"
           style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.08)' }}
+          aria-label="Go back"
         >
           <ArrowLeft size={20} color="#F0F4F8" />
         </button>
@@ -179,9 +182,12 @@ export const ChatScreen = () => {
       </div>
 
       {/* Messages */}
-      <div 
-        ref={scrollRef} 
+      <div
+        ref={scrollRef}
         className="flex-1 overflow-y-auto px-6 py-6 space-y-6 scrollbar-thin"
+        role="log"
+        aria-live="polite"
+        aria-label="Chat messages"
       >
         <div className="max-w-2xl mx-auto space-y-6">
           
@@ -308,6 +314,7 @@ export const ChatScreen = () => {
                     background: 'rgba(255, 255, 255, 0.05)',
                     border: '1px solid rgba(255, 255, 255, 0.08)',
                   }}
+                  aria-label={`Send: ${chip.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, '')}`}
                 >
                   {chip}
                 </button>
@@ -332,6 +339,7 @@ export const ChatScreen = () => {
               placeholder={isOnline ? 'Type a question or message to StadiumAI...' : 'AI features require internet connection'}
               disabled={!isOnline}
               className="flex-1 bg-transparent text-sm text-white placeholder-gray-500 outline-none px-3"
+              aria-label="Chat message input"
             />
             
             <motion.button
@@ -343,6 +351,7 @@ export const ChatScreen = () => {
                 background: isListening ? '#EF4444' : 'rgba(255, 255, 255, 0.05)',
                 border: '1px solid rgba(255, 255, 255, 0.08)',
               }}
+              aria-label={isListening ? 'Stop listening' : 'Start voice input'}
             >
               {isListening ? <MicOff size={18} color="#FFFFFF" /> : <Mic size={18} color="#06B6D4" />}
             </motion.button>
@@ -352,6 +361,7 @@ export const ChatScreen = () => {
               whileTap={{ scale: 0.92 }}
               disabled={!input.trim() || !isOnline}
               className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 cursor-pointer disabled:opacity-30 bg-[#06B6D4] hover:bg-[#06B6D4]/90"
+              aria-label="Send message"
             >
               <Send size={18} color="#FFFFFF" />
             </motion.button>

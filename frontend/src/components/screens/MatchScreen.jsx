@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, Clock, Target, Activity } from 'lucide-react';
 import { useAppStore } from '@/store/appStore';
 import { api } from '@/utils/api';
 import { MOCK_MATCH_DATA } from '@/utils/constants';
-import { ProgressBar } from '@/components/ui/ProgressBar';
+
 
 const TABS = ['Live', 'Lineups', 'Stats', 'Timeline'];
 
@@ -25,7 +25,7 @@ export const MatchScreen = () => {
       }
     };
     fetchMatch();
-  }, []);
+    }, [setMatchData]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -37,7 +37,7 @@ export const MatchScreen = () => {
       });
     }, 1000);
     return () => clearInterval(timer);
-  }, []);
+    }, []);
 
   const match = matchData || MOCK_MATCH_DATA;
 
@@ -74,6 +74,7 @@ export const MatchScreen = () => {
           onClick={goBack}
           className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer"
           style={{ background: '#111D2E', boxShadow: '4px 4px 8px #050A10, -4px -4px 8px #1A2A40' }}
+          aria-label="Go back"
         >
           <ArrowLeft size={20} color="#F0F4F8" />
         </button>
@@ -134,6 +135,9 @@ export const MatchScreen = () => {
               color: activeTab === tab ? '#FFD700' : '#4A5D75',
               borderBottom: activeTab === tab ? '2px solid #FFD700' : '2px solid transparent',
             }}
+            aria-label={`${tab} tab`}
+            aria-selected={activeTab === tab}
+            role="tab"
           >
             {tab}
           </button>

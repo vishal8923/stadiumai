@@ -1,4 +1,3 @@
-import React from 'react';
 import { Bell, ArrowLeft } from 'lucide-react';
 import { useAppStore } from '@/store/appStore';
 import { IconButton } from '@/components/ui/IconButton';
@@ -6,7 +5,6 @@ import { IconButton } from '@/components/ui/IconButton';
 export const Header = ({ greeting = true, showBack = false, onBack }) => {
   const navigateTo = useAppStore((s) => s.navigateTo);
   const unreadCount = useAppStore((s) => s.unreadCount);
-  const ticketInfo = useAppStore((s) => s.ticketInfo);
 
   return (
     <div className="flex items-center justify-between px-4 pt-4 pb-2">

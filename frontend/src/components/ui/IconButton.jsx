@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
 export const IconButton = ({ icon, onClick, size = 40, active = false, badge = null, className = '', ariaLabel }) => (

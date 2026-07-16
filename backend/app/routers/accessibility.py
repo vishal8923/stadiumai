@@ -1,20 +1,21 @@
+"""API endpoints for accessible infrastructure mapping and wait times."""
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from app.models.models import AccessibilityServiceModel
 from app.models.schemas import AccessibilityResponse, AccessibilityServiceItem
 from app.dependencies import get_db, general_rate_limit
+from typing import Annotated
 
 router = APIRouter(prefix="/api/v1", tags=["accessibility"])
 
 @router.get("/accessibility/{service_type}", response_model=AccessibilityResponse, dependencies=[general_rate_limit])
-def get_accessibility_services_endpoint(service_type: str, db: Session = Depends(get_db)):
-    """
-    Get operational availability and locations of accessible infrastructure (elevators, restrooms, ramps, wheelchair rentals).
+def get_accessibility_services_endpoint(service_type: str, db: Annotated[Session, Depends(get_db)]):
+    """Get operational availability and locations of accessible infrastructure (elevators, restrooms, ramps, wheelchair rentals).
     Non-AI, works normally even if Gemini is disabled.
     """
     # Query database for units matching type
     services = db.query(AccessibilityServiceModel).filter(
-        AccessibilityServiceModel.service_type == service_type
+        AccessibilityServiceModel.service_type == service_type,
     ).all()
 
     if not services:
@@ -24,7 +25,7 @@ def get_accessibility_services_endpoint(service_type: str, db: Session = Depends
     if not services:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Accessibility service type '{service_type}' not found."
+            detail=f"Accessibility service type '{service_type}' not found.",
         )
 
     service_items = []
@@ -35,8 +36,8 @@ def get_accessibility_services_endpoint(service_type: str, db: Session = Depends
                 service_type=s.service_type,
                 location=s.location,
                 status=s.status,
-                wait_time_minutes=s.wait_time_minutes
-            )
+                wait_time_minutes=s.wait_time_minutes,
+            ),
         )
 
     # Prioritize operational units with minimal wait times
@@ -54,5 +55,5 @@ def get_accessibility_services_endpoint(service_type: str, db: Session = Depends
     return AccessibilityResponse(
         services=service_items,
         nearest=nearest,
-        wait_time_minutes=wait_time
+        wait_time_minutes=wait_time,
     )

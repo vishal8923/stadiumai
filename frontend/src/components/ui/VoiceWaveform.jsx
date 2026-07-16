@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
 export const VoiceWaveform = ({ isActive, barCount = 5, color = '#00B4D8' }) => {
@@ -8,7 +7,7 @@ export const VoiceWaveform = ({ isActive, barCount = 5, color = '#00B4D8' }) => 
         <motion.div
           key={i}
           animate={isActive ? {
-            height: [8, 16 + Math.random() * 16, 8],
+            height: [8, 16 + (i * 2 + 5) % 16, 8],
           } : { height: 8 }}
           transition={{
             duration: 0.4,

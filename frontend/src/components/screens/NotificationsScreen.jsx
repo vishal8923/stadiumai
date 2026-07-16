@@ -1,8 +1,6 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, AlertTriangle, Trophy, Bus, Siren, Check, ChevronRight } from 'lucide-react';
 import { useAppStore } from '@/store/appStore';
-import { useNotifications } from '@/hooks/useNotifications';
 
 const NOTIFICATION_ICONS = {
   crowd: { icon: AlertTriangle, color: '#FF3D00', bg: 'rgba(255, 61, 0, 0.1)' },
@@ -28,6 +26,7 @@ export const NotificationsScreen = () => {
             onClick={goBack}
             className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer"
             style={{ background: '#111D2E', boxShadow: '4px 4px 8px #050A10, -4px -4px 8px #1A2A40' }}
+            aria-label="Go back"
           >
             <ArrowLeft size={20} color="#F0F4F8" />
           </button>
@@ -38,6 +37,7 @@ export const NotificationsScreen = () => {
           onClick={markAllRead}
           className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer"
           style={{ background: '#FFD700', boxShadow: '4px 4px 8px #050A10, -4px -4px 8px #1A2A40' }}
+          aria-label="Mark all notifications as read"
         >
           <Check size={18} color="#0A1628" />
         </motion.button>

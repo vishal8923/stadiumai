@@ -1,4 +1,3 @@
-import React from 'react';
 import { useAppStore } from '@/store/appStore';
 import { AppLayout } from '@/components/layout/AppLayout';
 import { ScreenTransition } from '@/components/layout/ScreenTransition';

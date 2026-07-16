@@ -1,18 +1,16 @@
-from fastapi import APIRouter, Depends
-from typing import Optional
+from fastapi import APIRouter
 from app.models.schemas import WasteRequest, WasteResponse
 from app.dependencies import general_rate_limit
 
 router = APIRouter(prefix="/api/v1", tags=["sustainability"])
 
 @router.post("/sustainability/waste", response_model=WasteResponse, dependencies=[general_rate_limit])
-def classify_waste_item(request: WasteRequest, location: Optional[str] = None):
-    """
-    Classify a waste item (compost, recycle, landfill) and find nearest disposal bins.
+def classify_waste_item(request: WasteRequest, location: str | None = None):
+    """Classify a waste item (compost, recycle, landfill) and find nearest disposal bins.
     Intentionally rule-based, non-AI logic that works normally when Gemini is disabled.
     """
     desc = request.item_description.lower().strip()
-    
+
     # Predefined keyword matching logic
     if any(k in desc for k in ["plastic", "bottle", "can", "soda", "cup", "beer", "aluminum", "container"]):
         item_type = "Recyclable (Plastic/Metal)"
@@ -43,5 +41,5 @@ def classify_waste_item(request: WasteRequest, location: Optional[str] = None):
         bin_type=bin_type,
         bin_location=bin_location,
         environmental_impact=environmental_impact,
-        disposal_tip=disposal_tip
+        disposal_tip=disposal_tip,
     )

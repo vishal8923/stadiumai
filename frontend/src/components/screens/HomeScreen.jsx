@@ -1,21 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Compass, 
   Globe, 
   Users, 
   ShieldAlert, 
-  MapPin, 
   Brain, 
   Clock, 
   Bus, 
   Leaf, 
   AlertTriangle, 
   Activity, 
-  ChevronRight, 
-  TrendingUp,
-  Flame,
-  Gauge
+  ChevronRight
 } from 'lucide-react';
 import { useAppStore } from '@/store/appStore';
 import { useCrowdPolling } from '@/hooks/useCrowdPolling';
@@ -73,7 +69,7 @@ export const HomeScreen = () => {
     fetchMatch();
     const timer = setInterval(fetchMatch, 30000);
     return () => clearInterval(timer);
-  }, []);
+    }, [setMatchData]);
 
   useEffect(() => {
     const fetchExtraData = async () => {
@@ -99,7 +95,7 @@ export const HomeScreen = () => {
     fetchExtraData();
     const interval = setInterval(fetchExtraData, 30000);
     return () => clearInterval(interval);
-  }, []);
+    }, []);
 
   const match = matchData || MOCK_MATCH_DATA;
   const zones = crowdData?.zones || [];
@@ -368,6 +364,7 @@ export const HomeScreen = () => {
                 <button 
                   onClick={() => navigateTo('chat')}
                   className="mt-4 px-4 py-2 bg-[#06B6D4] hover:bg-[#06B6D4]/90 text-white rounded-xl text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
+                  aria-label="Ask AI Assistant"
                 >
                   Ask AI Assistant <ChevronRight size={14} />
                 </button>
@@ -532,6 +529,7 @@ export const HomeScreen = () => {
               <button 
                 onClick={() => navigateTo('sustainability')}
                 className="w-full py-2.5 bg-[#10B981]/10 text-[#10B981] hover:bg-[#10B981]/15 rounded-xl text-xs font-bold transition-colors cursor-pointer"
+                aria-label="Scan waste with AI camera"
               >
                 Scan Waste with AI Camera
               </button>

@@ -1,7 +1,6 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
-export const NeoToggle = ({ enabled, onToggle, size = 'md', activeColor = '#00C853' }) => {
+export const NeoToggle = ({ enabled, onToggle, size = 'md', activeColor = '#00C853', ariaLabel }) => {
   const sizeMap = {
     sm: { w: 40, h: 22, thumb: 16 },
     md: { w: 52, h: 28, thumb: 22 },
@@ -28,6 +27,7 @@ export const NeoToggle = ({ enabled, onToggle, size = 'md', activeColor = '#00C8
       whileTap={{ scale: 0.95 }}
       role="switch"
       aria-checked={enabled}
+      aria-label={ariaLabel}
     >
       <motion.div
         animate={{ x: enabled ? s.w - s.thumb - 3 : 3 }}

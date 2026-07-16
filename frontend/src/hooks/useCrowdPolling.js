@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import { useAppStore } from '@/store/appStore';
 import { api } from '@/utils/api';
 import { MOCK_CROWD_DATA } from '@/utils/constants';
@@ -9,7 +9,7 @@ export const useCrowdPolling = (interval = 30000) => {
   const isOnline = useAppStore((s) => s.isOnline);
   const timerRef = useRef(null);
 
-  const fetchCrowd = async () => {
+  const fetchCrowd = useCallback(async () => {
     try {
       const response = await api.get('/api/v1/crowd/all');
       setCrowdData(response.data);
@@ -22,13 +22,13 @@ export const useCrowdPolling = (interval = 30000) => {
         setCrowdData(MOCK_CROWD_DATA);
       }
     }
-  };
+  }, [setCrowdData]);
 
   useEffect(() => {
     fetchCrowd();
     timerRef.current = setInterval(fetchCrowd, interval);
     return () => clearInterval(timerRef.current);
-  }, [isOnline]);
+  }, [isOnline, fetchCrowd, interval]);
 
   return { refresh: fetchCrowd };
 };

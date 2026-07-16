@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, HeartPulse, Shield, Flame, UserX, Wrench, CheckCircle, Copy, ChevronRight } from 'lucide-react';
+import { ArrowLeft, HeartPulse, Shield, Flame, UserX, Wrench, CheckCircle, Copy } from 'lucide-react';
 import { useAppStore } from '@/store/appStore';
 import { useNetworkStatus } from '@/hooks/useNetworkStatus';
 import { NeoButton } from '@/components/ui/NeoButton';
@@ -64,6 +64,7 @@ export const IncidentScreen = () => {
           onClick={step === 0 ? goBack : () => setStep(step - 1)}
           className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer"
           style={{ background: '#111D2E', boxShadow: '4px 4px 8px #050A10, -4px -4px 8px #1A2A40' }}
+          aria-label={step === 0 ? 'Go back' : 'Previous step'}
         >
           <ArrowLeft size={20} color="#F0F4F8" />
         </button>
@@ -162,6 +163,10 @@ export const IncidentScreen = () => {
                     value={severity}
                     onChange={(e) => setSeverity(Number(e.target.value))}
                     className="flex-1 accent-stadium-gold"
+                    aria-label={`Severity level: ${SEVERITY_LEVELS.find(l => l.value === severity)?.label || 'Medium'}`}
+                    aria-valuemin={1}
+                    aria-valuemax={4}
+                    aria-valuenow={severity}
                   />
                 </div>
                 <div className="flex justify-between mt-1">
@@ -223,6 +228,7 @@ export const IncidentScreen = () => {
                   onClick={() => navigator.clipboard?.writeText(incidentId)}
                   className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer"
                   style={{ background: '#111D2E', boxShadow: '4px 4px 8px #050A10, -4px -4px 8px #1A2A40' }}
+                  aria-label="Copy incident ID"
                 >
                   <Copy size={16} color="#8B9DB8" />
                 </button>

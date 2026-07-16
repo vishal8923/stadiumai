@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Accessibility, Eye, Navigation } from 'lucide-react';
 import { useAppStore } from '@/store/appStore';
@@ -23,17 +23,17 @@ export const MapScreen = () => {
 
   useCrowdPolling(30000);
 
-  const getZoneDensity = (zoneId) => {
+  const getZoneDensity = useCallback((zoneId) => {
     if (!crowdData?.zones) return 0.3;
     const zone = crowdData.zones.find((z) => z.zone_id === zoneId);
     return zone?.density ?? 0.3;
-  };
+  }, [crowdData]);
 
-  const getZoneLevel = (zoneId) => {
+  const getZoneLevel = useCallback((zoneId) => {
     if (!crowdData?.zones) return 'low';
     const zone = crowdData.zones.find((z) => z.zone_id === zoneId);
     return zone?.level || 'low';
-  };
+  }, [crowdData]);
 
   const renderStadiumSVG = () => {
     const cx = 200;
@@ -73,7 +73,15 @@ export const MapScreen = () => {
           const isCritical = level === 'critical';
 
           return (
-            <g key={sec.id} onClick={() => setSelectedZone(sec)} className="cursor-pointer">
+            <g
+              key={sec.id}
+              onClick={() => setSelectedZone(sec)}
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setSelectedZone(sec); } }}
+              className="cursor-pointer"
+              tabIndex={0}
+              role="button"
+              aria-label={`Section ${i + 1}, density level: ${level}`}
+            >
               <polygon
                 points={`${x1},${y1} ${x2},${y2} ${x3},${y3} ${x4},${y4}`}
                 fill={color}
@@ -160,6 +168,7 @@ export const MapScreen = () => {
           onClick={goBack}
           className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer shrink-0"
           style={{ background: '#111D2E', boxShadow: '4px 4px 8px #050A10, -4px -4px 8px #1A2A40' }}
+          aria-label="Go back"
         >
           <ArrowLeft size={20} color="#F0F4F8" />
         </button>
@@ -215,7 +224,7 @@ export const MapScreen = () => {
             <span style={{ color: '#FFD700', fontSize: 13, fontWeight: 600 }}>
               Section {selectedZone.name}
             </span>
-            <button onClick={() => setSelectedZone(null)} style={{ color: '#8B9DB8', fontSize: 11 }}>
+            <button onClick={() => setSelectedZone(null)} style={{ color: '#8B9DB8', fontSize: 11 }} aria-label="Dismiss zone selection">
               ✕ Dismiss
             </button>
           </div>
@@ -238,6 +247,8 @@ export const MapScreen = () => {
                   : '4px 4px 8px #050A10, -4px -4px 8px #1A2A40',
                 color: layer === l ? '#FFD700' : '#8B9DB8',
               }}
+              aria-label={`${l.charAt(0).toUpperCase() + l.slice(1)} layer`}
+              aria-pressed={layer === l}
             >
               {l}
             </button>
@@ -251,6 +262,7 @@ export const MapScreen = () => {
             onClick={() => navigateTo('navigation')}
             className="flex-1 py-3 rounded-xl flex items-center justify-center gap-2 cursor-pointer"
             style={{ background: '#FFD700', color: '#0A1628', fontWeight: 600, fontSize: 14 }}
+            aria-label="Navigate to destination"
           >
             <Navigation size={18} />
             Navigate to...
@@ -263,7 +275,8 @@ export const MapScreen = () => {
               background: wheelchairMode ? '#00B4D8' : '#111D2E',
               boxShadow: '4px 4px 8px #050A10, -4px -4px 8px #1A2A40',
             }}
-            title="Toggle wheelchair routes"
+            aria-label={`Wheelchair routing: ${wheelchairMode ? 'enabled' : 'disabled'}`}
+            aria-pressed={wheelchairMode}
           >
             <Accessibility size={20} color={wheelchairMode ? '#FFFFFF' : '#8B9DB8'} />
           </motion.button>
@@ -275,7 +288,8 @@ export const MapScreen = () => {
               background: crowdAvoid ? '#00C853' : '#111D2E',
               boxShadow: '4px 4px 8px #050A10, -4px -4px 8px #1A2A40',
             }}
-            title="Avoid crowded areas"
+            aria-label={`Crowd avoidance: ${crowdAvoid ? 'enabled' : 'disabled'}`}
+            aria-pressed={crowdAvoid}
           >
             <Eye size={20} color={crowdAvoid ? '#FFFFFF' : '#8B9DB8'} />
           </motion.button>

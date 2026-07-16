@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-export const useAppStore = create((set, get) => ({
+export const useAppStore = create((set) => ({
   // User
   userId: localStorage.getItem('stadium_user_id') || null,
   language: localStorage.getItem('stadium_language') || 'en',

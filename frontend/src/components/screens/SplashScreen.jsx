@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import { useAppStore } from '@/store/appStore';
 import { ProgressBar } from '@/components/ui/ProgressBar';
 

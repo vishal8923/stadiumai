@@ -1,5 +1,4 @@
-"""
-test_unit_navigation_service.py
+"""test_unit_navigation_service.py
 ==============================
 Unit tests for backend/app/services/navigation_service.py.
 

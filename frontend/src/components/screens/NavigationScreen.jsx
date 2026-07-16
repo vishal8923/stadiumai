@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Volume2, VolumeX, ChevronRight, Navigation } from 'lucide-react';
+import { ArrowLeft, Volume2, VolumeX, Navigation } from 'lucide-react';
 import { useAppStore } from '@/store/appStore';
 import { useVoice } from '@/hooks/useVoice';
 import { ProgressBar } from '@/components/ui/ProgressBar';
@@ -34,7 +34,7 @@ export const NavigationScreen = () => {
     if (voiceOn) {
       speak(currentStep.instruction);
     }
-  }, [step, voiceOn]);
+  }, [step, voiceOn, speak, currentStep.instruction]);
 
   return (
     <div className="h-full flex flex-col" style={{ background: '#0A1628' }}>
@@ -45,6 +45,7 @@ export const NavigationScreen = () => {
             onClick={goBack}
             className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer"
             style={{ background: '#111D2E', boxShadow: '4px 4px 8px #050A10, -4px -4px 8px #1A2A40' }}
+            aria-label="Go back"
           >
             <ArrowLeft size={20} color="#F0F4F8" />
           </button>
@@ -58,6 +59,8 @@ export const NavigationScreen = () => {
             onClick={() => setVoiceOn(!voiceOn)}
             className="ml-auto w-10 h-10 rounded-full flex items-center justify-center cursor-pointer"
             style={{ background: '#111D2E', boxShadow: '4px 4px 8px #050A10, -4px -4px 8px #1A2A40' }}
+            aria-label={voiceOn ? 'Disable voice guidance' : 'Enable voice guidance'}
+            aria-pressed={voiceOn}
           >
             {voiceOn ? <Volume2 size={18} color="#00B4D8" /> : <VolumeX size={18} color="#8B9DB8" />}
           </button>

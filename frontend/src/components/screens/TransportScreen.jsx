@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Bus, Train, Car, Footprints, Clock, Leaf, Navigation } from 'lucide-react';
+import { ArrowLeft, Bus, Train, Car, Footprints, Clock, Leaf } from 'lucide-react';
 import { useAppStore } from '@/store/appStore';
 import { api } from '@/utils/api';
 import { MOCK_TRANSPORT_OPTIONS } from '@/utils/constants';
@@ -9,7 +9,6 @@ const MODE_ICONS = { shuttle: Bus, metro: Train, taxi: Car, walking: Footprints,
 
 export const TransportScreen = () => {
   const goBack = useAppStore((s) => s.goBack);
-  const navigateTo = useAppStore((s) => s.navigateTo);
   const [options, setOptions] = useState([]);
   const [matchEndCountdown, setMatchEndCountdown] = useState(12);
 
@@ -40,6 +39,7 @@ export const TransportScreen = () => {
           onClick={goBack}
           className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer"
           style={{ background: '#111D2E', boxShadow: '4px 4px 8px #050A10, -4px -4px 8px #1A2A40' }}
+          aria-label="Go back"
         >
           <ArrowLeft size={20} color="#F0F4F8" />
         </button>

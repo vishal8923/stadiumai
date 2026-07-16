@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Home, Map, Mic, Ticket, User } from 'lucide-react';
 import { useAppStore } from '@/store/appStore';
@@ -31,18 +30,19 @@ export const BottomNav = () => {
 
         if (item.isCenter) {
           return (
-            <motion.button
-              key={item.id}
-              whileTap={{ scale: 0.9 }}
-              onClick={() => navigateTo(item.screen)}
-              className="flex items-center justify-center rounded-full -mt-6 cursor-pointer"
-              style={{
-                width: 56,
-                height: 56,
-                background: '#DAA520',
-                boxShadow: '0 0 20px rgba(218, 165, 32, 0.4), 4px 4px 8px rgba(0, 0, 0, 0.06)',
-              }}
-            >
+          <motion.button
+            key={item.id}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => navigateTo(item.screen)}
+            className="flex items-center justify-center rounded-full -mt-6 cursor-pointer"
+            style={{
+              width: 56,
+              height: 56,
+              background: '#DAA520',
+              boxShadow: '0 0 20px rgba(218, 165, 32, 0.4), 4px 4px 8px rgba(0, 0, 0, 0.06)',
+            }}
+            aria-label="AI Chat"
+          >
               <Mic size={24} color="#FFFFFF" />
             </motion.button>
           );
@@ -55,6 +55,8 @@ export const BottomNav = () => {
             onClick={() => navigateTo(item.screen)}
             className="flex flex-col items-center justify-center gap-1 py-2 px-3 cursor-pointer"
             style={{ minWidth: 60 }}
+            aria-label={item.label}
+            aria-current={isActive ? 'page' : undefined}
           >
             <Icon
               size={22}

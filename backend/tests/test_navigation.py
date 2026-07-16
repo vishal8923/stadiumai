@@ -1,23 +1,30 @@
-import pytest
-from fastapi.testclient import TestClient
-from app.main import app
+"""Tests for the navigation /api/v1/navigate endpoint."""
 
-client = TestClient(app)
 
-def test_calculate_route_valid():
-    response = client.get("/api/v1/navigation/route?from_location=gate_a&to_location=gate_b")
+def test_calculate_route_valid(client):
+    response = client.post(
+        "/api/v1/navigate",
+        json={"from_location": "gate_a", "to_location": "gate_b"}
+    )
     assert response.status_code == 200
     data = response.json()
-    assert "path" in data
-    assert "distance" in data
+    assert "route" in data
+    assert "distance_meters" in data
 
-def test_calculate_route_invalid_location():
-    response = client.get("/api/v1/navigation/route?from_location=unknown&to_location=gate_b")
-    # pathfinder will return 400 for unknown locations or simply error out
+
+def test_calculate_route_invalid_location(client):
+    response = client.post(
+        "/api/v1/navigate",
+        json={"from_location": "unknown", "to_location": "gate_b"}
+    )
     assert response.status_code in [400, 404, 500]
 
-def test_route_with_accessibility():
-    response = client.get("/api/v1/navigation/route?from_location=gate_a&to_location=gate_b&accessibility_mode=true")
+
+def test_route_with_accessibility(client):
+    response = client.post(
+        "/api/v1/navigate",
+        json={"from_location": "gate_a", "to_location": "gate_b", "accessibility_mode": True}
+    )
     assert response.status_code == 200
     data = response.json()
-    assert "path" in data
+    assert "route" in data

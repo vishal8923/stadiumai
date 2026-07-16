@@ -1,5 +1,4 @@
-"""
-test_unit_incident_service.py
+"""test_unit_incident_service.py
 =============================
 Unit tests for backend/app/services/incident_service.py.
 
@@ -14,7 +13,7 @@ Covers:
 
 import pytest
 import datetime
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from fastapi import HTTPException
@@ -114,7 +113,7 @@ def test_get_incident_success(db_session):
     inc = IncidentModel(
         incident_id="inc_test", type="security", location="gate_c",
         description="Intruder on field", severity="high", priority="high",
-        status="REPORTED", reporter_id="user_2", created_at=datetime.datetime.utcnow()
+        status="REPORTED", reporter_id="user_2", created_at=datetime.datetime.now(datetime.timezone.utc)
     )
     db_session.add(inc)
     db_session.commit()

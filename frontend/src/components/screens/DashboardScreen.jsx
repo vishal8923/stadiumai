@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, AlertTriangle, Users, MessageSquare, Clock, TrendingUp, Check } from 'lucide-react';
+import { ArrowLeft, AlertTriangle, Users, MessageSquare, Clock, TrendingUp } from 'lucide-react';
 import { useAppStore } from '@/store/appStore';
 import { useCrowdPolling } from '@/hooks/useCrowdPolling';
 import { api } from '@/utils/api';
@@ -76,6 +76,7 @@ export const DashboardScreen = () => {
           onClick={goBack}
           className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer transition-colors"
           style={{ background: 'rgba(255, 255, 255, 0.8)', border: '1px solid rgba(26, 36, 47, 0.08)' }}
+          aria-label="Go back"
         >
           <ArrowLeft size={20} color="#1A242F" />
         </button>
@@ -125,6 +126,7 @@ export const DashboardScreen = () => {
                   value={filter}
                   onChange={(e) => setFilter(e.target.value)}
                   className="bg-white text-[#5A6B7C] text-xs px-3 py-1.5 rounded-xl cursor-pointer outline-none border border-gray-200 shadow-sm"
+                  aria-label="Filter incidents by status"
                 >
                   <option value="all">All Incidents</option>
                   <option value="reported">Reported</option>

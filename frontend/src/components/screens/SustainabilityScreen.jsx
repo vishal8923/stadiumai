@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Camera, Leaf, Navigation, Recycle, Trash2, Droplets } from 'lucide-react';
+import { ArrowLeft, Camera, Leaf, Navigation, Recycle, Trash2 } from 'lucide-react';
 import { useAppStore } from '@/store/appStore';
 import { useNetworkStatus } from '@/hooks/useNetworkStatus';
 import { NeoButton } from '@/components/ui/NeoButton';
@@ -10,7 +10,6 @@ import { addPendingAction } from '@/utils/offlineDB';
 
 export const SustainabilityScreen = () => {
   const goBack = useAppStore((s) => s.goBack);
-  const navigateTo = useAppStore((s) => s.navigateTo);
   const { isOnline } = useNetworkStatus();
   const [item, setItem] = useState('');
   const [result, setResult] = useState(null);
@@ -36,7 +35,21 @@ export const SustainabilityScreen = () => {
     if (isOnline) {
       try {
         const res = await api.post('/api/v1/sustainability/waste', { item_description: item });
-        setResult(res.data);
+        const mappedResult = {
+          item: item.charAt(0).toUpperCase() + item.slice(1),
+          bin: {
+            type: res.data.bin_type,
+            color: res.data.bin_type.includes('Recycling')
+              ? '#00B4D8'
+              : res.data.bin_type.includes('Compost')
+              ? '#00C853'
+              : '#8B9DB8',
+          },
+          nearest: res.data.bin_location,
+          co2: 0.05,
+          tip: res.data.disposal_tip,
+        };
+        setResult(mappedResult);
       } catch {
         setResult(mockResult);
       }
@@ -63,6 +76,7 @@ export const SustainabilityScreen = () => {
           onClick={goBack}
           className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer"
           style={{ background: '#111D2E', boxShadow: '4px 4px 8px #050A10, -4px -4px 8px #1A2A40' }}
+          aria-label="Go back"
         >
           <ArrowLeft size={20} color="#F0F4F8" />
         </button>
